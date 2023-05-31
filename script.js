@@ -54,3 +54,77 @@ const text =
     "Lorem ipsum dolor sit, amet consectetur adipisicing elit, Eveniet beatae ut sequi ipsa, labore commodi,";
 const textArr = text.split(",");
 console.log(textArr);
+
+// ----------------------------------- LAB 2 ---------------------------------------
+
+//قم بعمل صفحة Html تحتوي على button و p باستخدام js غير قيمة النص عند الضغط على الزر .
+
+const paragraph = document.getElementById("paragraph");
+//const button = document.getElementById("button");
+document.getElementById("button").onclick = () => {
+    paragraph.textContent = "YOU CLICKED!";
+};
+
+// قم بإضافة خيار زيادة حجم الخط و تقليص حجم الخط
+
+document.getElementById("increase").onclick = () => {
+    paragraph.style.fontSize = "larger";
+};
+document.getElementById("decrease").onclick = () => {
+    paragraph.style.fontSize = "smaller";
+};
+
+// قم بعمل خيار وضع خلفية للنص .
+document.getElementById("background").onclick = () => {
+    paragraph.style.background = "black";
+    paragraph.style.color = "white";
+};
+//قم بعمل form تاخذ معطيات من المستخدم و تظيفها الى list .
+
+document.getElementById("submit").onclick = () => {
+    let input = document.getElementById("username").value;
+    let li = document.createElement("li");
+    li.textContent = input;
+    document.getElementById("ul").append(li);
+};
+
+//باستخدام js قم بعرض صورة وتغيرها عند الضغط على زر تغير الصوره .
+
+document.getElementById("changeimg").onclick = () => {
+    document.getElementById("img").src = "/imgs/img2.jpeg";
+};
+
+//قم بعمل حاسبة تقوم بعمل العملايات الرياضية الاساسية وعرض النتائج للمستخدم
+
+document.getElementById("calc").onclick = () => {
+    const result = document.getElementById("result");
+    const nb1 = Number(document.getElementById("nb1").value);
+    const nb2 = Number(document.getElementById("nb2").value);
+    const select = document.getElementById("select").value;
+    switch (select) {
+        case "Multiply":
+            result.textContent = nb1 * nb2;
+            break;
+        case "Add":
+            result.textContent = nb1 + nb2;
+            break;
+        case "Sub":
+            result.textContent = nb1 - nb2;
+            break;
+        case "Divide":
+            result.textContent = nb1 / nb2;
+            break;
+    }
+};
+
+//بستخدام get Element قم بغير قيمة name الى اسمك :
+document.getElementById("name").textContent = "Raeed";
+
+//اضف Events على قيمة name عند الضغط عليها تقوم بعرض تنبيه يعرض التاريخ .
+document.getElementById("name").onclick = () => {
+    alert(new Date());
+};
+
+document.getElementById("doubleclick").ondblclick = () => {
+    scroll(0, 0);
+};
